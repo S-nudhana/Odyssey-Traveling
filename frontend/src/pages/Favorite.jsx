@@ -71,11 +71,9 @@ export default function Favorite() {
         getFavoritesData();
         getAll();
     }, []);
-
-    // Extract favorite place IDs
+    
     const favoriteIds = new Set(favoritesData.map(fav => fav.placeId));
 
-    // Filter all places to include only favorites
     const filteredPlaces = all.filter(place => favoriteIds.has(place.Id));
 
     return (
